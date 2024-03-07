@@ -1,8 +1,8 @@
-const user = require('./user')
-const article = require('./article')
+// const user = require('./user')
+// const article = require('./article')
 
-import user from "./user.route.js";
-import article from "./article.route.js";
+import * as user from "./user.route.js";
+import * as article from "./article.route.js";
 
 module.exports = (router) => {
     user(router)

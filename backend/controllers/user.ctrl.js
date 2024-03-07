@@ -1,5 +1,5 @@
-import User from "../models/user.model.js";
-import Article from "../models/article.model.js";
+import {User} from "../models/user.model.js";
+import {Article} from "../models/article.model.js";
 
 module.exports = {
     addUser : (req,res,next) => {

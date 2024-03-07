@@ -1,20 +1,21 @@
-import {getUser ,getUserProfile, addUser, followUser} from "./../controllers/user.ctrl";
+// import {getUser ,getUserProfile, addUser, followUser} from "./../controllers/user.ctrl.js";
+import * as qwert from "./../controllers/user.ctrl.js";
 
 module.exports = (router) => {
 
     router
         .route('/user/:id')
-        .get(getUser)
+        .get(qwert.getUser)
 
     router
         .route('/user/profile/:id')
-        .get(getUserProfile)
+        .get(qwert.getUserProfile)
 
     router
         .route('/user')
-        .post(addUser)
+        .post(qwert.addUser)
 
     router
         .route('/user/follow')
-        .post(followUser)
+        .post(qwert.followUser)
 }

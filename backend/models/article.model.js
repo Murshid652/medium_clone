@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-const articleSchmea = new Schema({
+const articleSchema = new Schema({
   text: String,
   title: {
     type: String,
@@ -27,23 +27,24 @@ const articleSchmea = new Schema({
   ]
 })
 
-articleSchmea.methods.clap = function () {
+articleSchema.methods.clap = function () {
   this.claps++;
   return this.save();
 }
 
-articleSchmea.methods.comment = function (comm){
+articleSchema.methods.comment = function (comm){
     this.comments.push(c);
     return this.save();
 }
 
-ArticleSchema.methods.addAuthor = function (author_id) {
+articleSchema.methods.addAuthor = function (author_id) {
     this.author = author_id
     return this.save()
 }
-ArticleSchema.methods.getUserArticle = function (_id) {
+articleSchema.methods.getUserArticle = function (_id) {
     Article.find({'author': _id}).then((article) => {
         return article
     })
 }
-export const Article= mongoose.model('Article', ArticleSchema)
+
+export const Article= mongoose.model('Article', articleSchema)

@@ -1,6 +1,6 @@
-import { User } from "../models/user.model";
-import { Article } from "../models/article.model";
-import { cloudinary } from 'cloudinary';
+// import { User } from "../models/user.model";
+import { Article } from "../models/article.model.js";
+import { v2 as cloudinary } from 'cloudinary';
 
 module.exports = {
     addArticle : (req,res,next) => {

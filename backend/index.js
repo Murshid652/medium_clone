@@ -3,6 +3,8 @@ import express from "express";
 import connectDB from "./db/connect.db.js";
 import cors from "cors";
 import cloudinary from "cloudinary";
+import * as routes from "./routes/app.route.js";
+
 
 dotenv.config();
 
@@ -19,6 +21,10 @@ connectDB()
         api_key: process.env.API_KEY, 
         api_secret: process.env.API_SECRET
     });
+
+    const router = express.Router();
+    routes(router);
+    app.use("/api", router)
 
     app.listen(port , ()=>{
         console.log(`app is listening on port ${port}`);

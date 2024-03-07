@@ -1,4 +1,4 @@
-import {addArticle , getAll , clapArticle , commentArticle, getArticle} from "./../controllers/article.ctrl"
+import * as qwert from "./../controllers/article.ctrl.js"
 
 // const articlecontroller = require('./../controllers/article.ctrl')
 // const multipart = require('connect-multiparty')
@@ -10,21 +10,21 @@ module.exports = (router) => {
 
     router
         .route('/articles')
-        .get(getAll)
+        .get(qwert.getAll)
 
     router
         .route('/article')
-        .post(multipartWare, addArticle)
+        .post(multipartWare, qwert.addArticle)
 
     router
         .route('/article/clap')
-        .post(clapArticle)
+        .post(qwert.clapArticle)
 
     router
         .route('/article/comment')
-        .post(commentArticle)
+        .post(qwert.commentArticle)
 
     router
         .route('/article/:id')
-        .get(getArticle)
+        .get(qwert.getArticle)
 }
